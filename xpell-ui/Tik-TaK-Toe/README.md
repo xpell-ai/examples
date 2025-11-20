@@ -36,7 +36,7 @@ Tik-TaK-Toe/
 2. **Run the project** (using a local server or build tool):
    ```bash
    # Example using live-server
-   npx live-server
+   npm run dev
    ```
    Or open `index.html` directly in your browser (ensure module imports are resolved).
 
