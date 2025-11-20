@@ -110,7 +110,7 @@ async function main() {
             {
                 _type:"view",
                 _id:"ttt-title",
-                _text:"Tic-Tac-Toe",
+                _text:"Tic-Tac-Toe Game Xpell UI",
                 style:"font-size: 2em; margin-bottom: 20px;",
                 _on_show_animation:"animate__bounce",
                 _on_mount:(xobj) => {
