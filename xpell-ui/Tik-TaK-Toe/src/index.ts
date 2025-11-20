@@ -36,19 +36,18 @@ async function main() {
                 _text:"?",
                 _on_click:(xobj, event) => {
                     if(_xd._o["ttt-turn"] === "X"){
-                        xobj.setText("X")
+                        xobj._text = "X"
                         xobj.dom.style.color = "white"
                         xobj.dom.style.backgroundColor = "black"
                         _xd._o["ttt-turn"] = "O"
                         board[rowNum][cellNum] = "X"
                     } else {
-                        xobj.setText("O")
+                        xobj._text = "O"
                         _xd._o["ttt-turn"] = "X"
                         board[rowNum][cellNum] = "O"
                         xobj.dom.style.color = "black"
                         xobj.dom.style.backgroundColor = "white"
                     }
-                    console.log(board);
                     
                     //check for winner
                     let winner:any = undefined
@@ -69,11 +68,11 @@ async function main() {
                         winner = board[0][2]
                     }
                     if(winner)  {
-                        console.log("Player " + winner + " wins!");
+                        _xlog.log("Player " + winner + " wins!");
                         
                         const lbl = XUI.getObject("ttt-status")
                         lbl._data_source = undefined
-                        lbl.setText("Player " + winner + " wins!")
+                        lbl._text = "Player " + winner + " wins!"
                         lbl._on_frame = (xobj, frame) => {
                             //color =  frame * hsl
                             xobj.dom.style.color = "hsl(" + (frame ) + ", 100%, 50%)"
