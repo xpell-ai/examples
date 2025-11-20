@@ -1,0 +1,72 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.x3d-player {
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: all;
+}
+
+.xplayer {
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 20;
+    pointer-events: none;
+}
+
+
+
+.main-view {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    gap:10px;
+    pointer-events: all;
+
+
+}
+
+
+
+.main-label {
+    color: #fff;
+    font-size: 20px;
+    border-right: 1px solid #ccc;
+    padding: 0 10px;
+    
+}
+
+.fps-label {
+    color: #fff;
+    font-size: 20px;
+}
+.record-button {
+    background-color: #f00;
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
