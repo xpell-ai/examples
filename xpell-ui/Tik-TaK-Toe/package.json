@@ -1,0 +1,17 @@
+{
+  "name": "ttt",
+  "version": "1.0.0",
+  "description": "TTT Game",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite ."
+  },
+  "author": "Tamir Fridman",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "xpell-ui": "^1.4.91"
+  }
+}
