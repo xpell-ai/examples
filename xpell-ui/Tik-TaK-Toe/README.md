@@ -46,7 +46,7 @@ Tik-TaK-Toe/
 - Use Xpell modules to add more features or animations.
 
 ## Learn More
-- [Xpell.ai Documentation](https://xpell.ai/docs)
+- [Xpell.ai Documentation](https://xpell.ai)
 - [animate.css Documentation](https://animate.style/)
 
 ## License
