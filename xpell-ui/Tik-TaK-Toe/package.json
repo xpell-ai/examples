@@ -4,10 +4,11 @@
   "description": "TTT Game",
   "main": "index.js",
   "scripts": {
-    "dev": "vite ."
+    "dev": "vite .",
+    "build": "vite build"
   },
   "author": "Tamir Fridman",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "vite": "^7.2.4"
   },
