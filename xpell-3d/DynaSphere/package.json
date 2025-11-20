@@ -1,0 +1,17 @@
+{
+  "name": "dynasphere",
+  "version": "1.0.0",
+  "description": "DynaSphere, Audio Visualizer with Xpell 3D",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite ."
+  },
+  "author": "Tamir Fridman",
+  "license": "ISC",
+  "dependencies": {
+    "xpell": "^1.4.82"
+  },
+  "devDependencies": {
+    "vite": "^5.1.4"
+  }
+}

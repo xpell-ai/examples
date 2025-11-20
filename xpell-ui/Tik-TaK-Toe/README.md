@@ -51,3 +51,5 @@ Tik-TaK-Toe/
 
 ## License
 This example is provided for educational purposes. See [LICENSE](../LICENSE) for details.
+
+Copyright (c) 2025 Aime Technologies
