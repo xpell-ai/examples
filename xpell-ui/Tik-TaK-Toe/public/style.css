@@ -1,12 +1,106 @@
+:root,
+[data-theme] {
+
+    --x-primary: #2563eb;
+    --x-danger: #dc2626;
+    --x-success: #16a34a;
+    --x-warning: #d97706;
+
+    --x-radius-sm: 4px;
+    --x-radius-md: 8px;
+    --x-radius-lg: 14px;
+
+    --x-spacing-xs: 4px;
+    --x-spacing-sm: 8px;
+    --x-spacing-md: 16px;
+    --x-spacing-lg: 24px;
+
+    --x-shadow-sm:
+        0 1px 2px rgba(0, 0, 0, .08);
+
+    --x-shadow-md:
+        0 8px 24px rgba(0, 0, 0, .12);
+}
 
 
+/* =========================================================================
+ 
+Default Theme (LIGHT)
+========================================================================= */
+
+:root,
+:root[data-theme="light"],
+[data-theme="light"] {
+
+    --x-bg: #f9f9f9;
+
+    --x-surface: #c4c4c4;
+    --x-surface-2: #1c1f25;
+
+    --x-text: #111111;
+    --x-text-2: #FFFFFF;
+    --x-text-muted: #6b7280;
+
+    --x-border:
+        rgba(17, 17, 17, .08);
+
+    --x-shadow-md:
+        0 8px 24px rgba(0, 0, 0, .12);
+}
+
+
+/* =========================================================================
+ 
+Dark Theme
+========================================================================= */
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+
+    --x-bg: #292d36;
+
+    --x-surface: #131212;
+    --x-surface-2: #dfe1e7;
+
+    --x-text: #ffffff;
+    --x-text-2: #111111;
+    --x-text-muted: #9ca3af;
+
+    --x-border:
+        rgba(255, 255, 255, .08);
+
+    --x-shadow-md:
+        0 12px 32px rgba(0, 0, 0, .32);
+
+    --x-primary: #4f46e5;
+}
+
+
+/* =========================================================================
+ 
+Xpell Base Layout
+========================================================================= */
+
+html,
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--x-bg);
+    color: var(--x-text);
+}
+
+/*body {
+    
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle at 20% 20%, #1c273a, #0b1324 60%);
     color: #e5e7eb;
-}
+}*/
 
 #root {
     display: flex;
@@ -17,25 +111,54 @@ body {
     width: 100%;
 }
 
+/* The container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 .ttt-home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     height: 100%;
     gap: 12px;
 }
 
-.ttt-board-button {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    font-size: 24px;
+.ttt-title {
+    font-size: 3em;
     font-weight: bold;
-    background: #0f172a;
-    color: #e5e7eb;
-    border: 2px solid #334155;
+}
+
+.ttt-status-label {
+    display: flex;
+    width: 38rem;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+}
+
+.ttt-board-button {
+    width:  12rem;
+    height: 12rem;
+    margin: 5px;
+    font-size: 4em;
+    font-weight: bold;
+    background: var(--x-bg);
+    color: var(--x-text);
+    border: 2px solid var(--x-border);
     border-radius: 6px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
@@ -47,9 +170,14 @@ body {
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
+
 .new-game-button {
+    width: 300px;
+    height: 100px;
     padding: 10px 20px;
-    font-size: 18px;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-size: 2em;
     font-weight: bold;
     background: #2563eb;
     color: #e5e7eb;
@@ -58,4 +186,34 @@ body {
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
     cursor: pointer;
     transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+}
+
+/* The track */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+/* The circle knob */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* On-state styling */
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }

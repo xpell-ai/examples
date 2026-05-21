@@ -1,0 +1,74 @@
+{
+  "_type": "view",
+  "_id": "ttt-home",
+  "class": "ttt-home",
+  "_children": [
+    {
+      "_type": "view",
+      "style": "display: flex; justify-content: flex-end; padding: 1rem;",
+      "_children": [
+        {
+          "_type": "view",
+          "style": "font-size: 1.5rem; margin-right: 1rem; margin-top: 0.25rem;",
+          "_id": "ttt-theme-label",
+          "_text": "Dark Mode"
+        },
+        {
+          "_type": "label",
+          "class": "switch",
+          "_children": [
+            {
+              "_type": "xhtml",
+              "_html_tag": "input",
+              "type": "checkbox",
+              "_id": "ttt-toggle-theme",
+              "_mode": "light",
+              "_on": {
+                "click": [
+                  {
+                    "_module": "xem",
+                    "_op": "fire",
+                    "_params": {
+                      "event": "ttt:toggle-theme"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "_type": "view",
+              "class": "slider"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "label",
+      "class": "ttt-title",
+      "_id": "ttt-title",
+      "_text": "Xpell 2 Tic Tac Toe"
+    },
+    {
+      "_type": "ttt-board",
+      "_id": "ttt-board"
+    },
+    {
+      "_type": "button",
+      "class": "new-game-button",
+      "_id": "ttt-reset",
+      "_text": "New Game",
+      "_on": {
+        "click": [
+          {
+            "_module": "xem",
+            "_op": "fire",
+            "_params": {
+              "event": "ttt:reset"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
