@@ -4,12 +4,16 @@
   "description": "DynaSphere, Audio Visualizer with Xpell 3D",
   "main": "index.js",
   "scripts": {
-    "dev": "vite ."
+    "dev": "vite .",
+    "reinstall": "rm -rf node_modules && rm -rf package-lock.json && pnpm install && pnpm dev"
   },
   "author": "Tamir Fridman",
   "license": "ISC",
   "dependencies": {
-    "xpell": "^1.4.82"
+    "three": "^0.182.0",
+    "@xpell/ui": "^2.0.0-alpha.1",
+    "@xpell/core": "^2.0.0-alpha.10",
+    "@xpell/3d":"^2.0.0-alpha.1"
   },
   "devDependencies": {
     "vite": "^5.1.4"

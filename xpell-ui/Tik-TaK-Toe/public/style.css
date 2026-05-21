@@ -46,3 +46,16 @@ body {
     border-color: #64748b;
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
+
+.new-game-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #2563eb;
+    color: #e5e7eb;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+    cursor: pointer;
+    transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+}

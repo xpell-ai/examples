@@ -10,9 +10,13 @@
   "author": "Tamir Fridman",
   "license": "MIT",
   "devDependencies": {
-    "vite": "^7.2.4"
+    "vite": "^7.3.3"
   },
   "dependencies": {
-    "xpell-ui": "^1.4.91"
+    "@xpell/ui": "^2.0.0",
+    "animate.css": "^4.1.1"
+  },
+  "peerDependencies": {
+    "@xpell/core": "^2.0.0"
   }
 }

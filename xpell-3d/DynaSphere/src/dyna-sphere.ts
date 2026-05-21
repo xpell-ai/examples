@@ -2,7 +2,7 @@
  * DynaSphere X3D Object
  */
 import * as THREE from 'three'
-import { X3DObject, XObjectPack, X3D } from 'xpell'
+import { X3DObject } from '@xpell/3d'
 
 export class DynaSphere extends X3DObject {
 
@@ -14,7 +14,6 @@ export class DynaSphere extends X3DObject {
     _geometry: THREE.BufferGeometry
     _material: THREE.PointsMaterial
     _audio_analyzer: any
-    declare _three_obj: THREE.Points;
     _start_position: any
     _start_colors: any
 
@@ -56,7 +55,7 @@ export class DynaSphere extends X3DObject {
     }
 
     getThreeObject() {
-        if (!this._three_obj) {
+        if (!this._threeSync) {
             this._threes_class_args = [this._geometry, this._material]
         }
         return super.getThreeObject()
@@ -85,6 +84,8 @@ export class DynaSphere extends X3DObject {
     async onFrame(frameNumber: number): Promise<void> {
 
         if (this._audio_analyzer) {
+            const threeObj = this._threeSync as THREE.Points | null;
+            if (!threeObj) return;
 
             const dataArray = new Uint8Array(this._audio_analyzer.frequencyBinCount);
             this._audio_analyzer.getByteFrequencyData(dataArray);
@@ -100,8 +101,8 @@ export class DynaSphere extends X3DObject {
 
             // Update point positions
             if (!this._start_position) {
-                this._start_position = this._three_obj.geometry.attributes.position.clone();
-                this._start_colors = this._three_obj.geometry.attributes.color.clone();
+                this._start_position = threeObj.geometry.attributes.position.clone();
+                this._start_colors = threeObj.geometry.attributes.color.clone();
             }
             const positions = this._start_position.array;
             const newPositions = new Float32Array(this._points * 3);
@@ -134,8 +135,8 @@ export class DynaSphere extends X3DObject {
                 newColors[i * 3 + 3] = 1;
             }
 
-            this._three_obj.geometry.setAttribute('position', new THREE.BufferAttribute(newPositions, 3));
-            this._three_obj.geometry.setAttribute('color', new THREE.BufferAttribute(newColors, 4));
+            threeObj.geometry.setAttribute('position', new THREE.BufferAttribute(newPositions, 3));
+            threeObj.geometry.setAttribute('color', new THREE.BufferAttribute(newColors, 4));
         }
         await super.onFrame(frameNumber)
 
